@@ -1,0 +1,116 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "cursive"; /* Make sure "cursive" is a valid font on all systems */
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Apply blur effect to the background image */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Fallback for older browsers */
+  -webkit-filter: blur(5px); /* Prefix for Chrome and Safari */
+  z-index: -1; /* Ensure it's behind other content */
+}
+
+/* Form wrapper styling */
+.wrapper {
+  position: relative; /* Ensure z-index works properly */
+  z-index: 1; /* Ensure it's above the blurred background */
+  width: 420px;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background for readability */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 30px 40px;
+  color: #fff; /* White text for better contrast */
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px; /* Adjusted for spacing */
+}
+
+/* Input box styling */
+.wrapper input[type="text"],
+.wrapper input[type="email"],
+.wrapper input[type="password"] {
+  width: 100%;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
+  padding: 10px 15px;
+  margin-bottom: 20px; /* Adjusted for spacing */
+}
+
+.wrapper input[type="checkbox"] {
+  margin-right: 5px; /* Adjusted for spacing */
+}
+
+/* Button styling */
+.wrapper .clearfix {
+  margin-top: 20px; /* Adjusted for spacing */
+}
+
+.wrapper .cancelbtn,
+.wrapper .signupbtn {
+  width: 48%; /* Adjusted for equal width buttons */
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wrapper .cancelbtn {
+  background-color: #DC143C;
+  color: rgb(50, 47, 47);
+  margin-right: 4%; /* Adjusted for spacing */
+}
+
+.wrapper .signupbtn {
+  background-color: #B0E0E6;
+  color: #778899;
+  margin-left: 4%; /* Adjusted for spacing */
+}
+
+.wrapper .signupbtn:hover {
+  background-color: #00CED1; /* Added hover effect color */
+  color: rgb(23, 20, 20); /* Added hover effect color */
+}
+
+/* Link styling */
+.wrapper p a {
+  color: #AFEEEE;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.wrapper p a:hover {
+  text-decoration: underline;
+}
